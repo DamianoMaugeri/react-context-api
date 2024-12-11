@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { BASE_URI } from '../../config';
 import Button from '../Button/Button';
 import style from './Card.module.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import GlobalContext from '../../context/GlobalContext';
+import DeleteButton from '../DeleteButton/DeleteButton';
 
 
 
@@ -13,6 +15,8 @@ import { useState } from 'react';
 
 
 export function Card({ post = {}, deleteFunction = () => { }, onUpdateTitle = () => { } }) {
+
+
     // console.log(tags)
 
     console.log('Rendering Card');
@@ -73,7 +77,8 @@ export function Card({ post = {}, deleteFunction = () => { }, onUpdateTitle = ()
                         <Button />
 
                     </Link>
-                    <button className={style.delete_button} onClick={deleteFunction}>elimina</button>
+                    {/* <button className={style.delete_button} onClick={deleteFunction}>elimina</button> */}
+                    <DeleteButton post={post} />
                 </div>
 
                 {isPublished ?

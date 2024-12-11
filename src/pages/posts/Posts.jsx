@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { BASE_URI } from '../../config';
 import { Card } from '../../components/Card/Card';
+import GlobalContext from '../../context/GlobalContext';
+import PostList from '../../components/PostList';
 
 
 
@@ -10,38 +12,36 @@ import { Card } from '../../components/Card/Card';
 
 export default function Posts() {
 
-    const [posts, setPosts] = useState([])
+    //const [posts, setPosts] = useState([])
+
+    const { posts, fetchPosts } = useContext(GlobalContext);
 
 
-    useEffect(() => fetchPosts(), []);
+    // useEffect(() => fetchPosts(), []);
 
+    /*
     function fetchPosts() {
         axios.get(`${BASE_URI}/posts`)
             .then(res => setPosts(res.data))
             .catch(err => console.log(err))
     }
+    */
 
 
 
     // funzione per eliminare un post 
 
-    function deletePost(post) {
-        // setPosts(posts.filter(post => post !== currentPost))
+    // function deletePost(post) {
+    //     // setPosts(posts.filter(post => post !== currentPost))
 
-
-
-        axios.delete(`${BASE_URI}/posts/${post.id}`)
-            .then((res) => {
-                fetchPosts()
-
-
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
-
-    }
+    //     axios.delete(`${BASE_URI}/posts/${post.id}`)
+    //         .then((res) => {
+    //             fetchPosts()
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
 
 
 
@@ -52,7 +52,8 @@ export default function Posts() {
                     <h1> I MIEI POST</h1>
                 </div>
             </section>
-            <div className="container">
+            <PostList />
+            {/* <div className="container">
                 <div className="row">
                     {posts.map((post) => (
                         <div key={post.id} className="col_4">
@@ -60,7 +61,7 @@ export default function Posts() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </main>
 
     )
