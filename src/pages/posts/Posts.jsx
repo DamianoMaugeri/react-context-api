@@ -56,15 +56,6 @@ export default function Posts() {
             </section>
 
             <PostList />
-            {/* <div className="container">
-                <div className="row">
-                    {posts.map((post) => (
-                        <div key={post.id} className="col_4">
-                            <Card post={post} deleteFunction={() => deletePost(post)} onUpdateTitle={(title) => updateTitle(title, post.id)} />
-                        </div>
-                    ))}
-                </div>
-            </div> */}
         </main>
 
     )

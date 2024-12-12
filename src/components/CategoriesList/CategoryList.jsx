@@ -15,7 +15,7 @@ export default function CategoryList() {
         <div className="container">
             <div className="row">
                 <ul className={style.tags}>
-                    {
+                    {categories &&
                         categories.map(category => (
                             <li key={category}>
                                 <Tag content={category} />

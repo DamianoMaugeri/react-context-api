@@ -14,7 +14,7 @@ import DeleteButton from '../DeleteButton/DeleteButton';
 
 
 
-export function Card({ post = {}, deleteFunction = () => { }, onUpdateTitle = () => { } }) {
+export function Card({ post = {}, onUpdateTitle = () => { } }) {
 
 
     // console.log(tags)
@@ -67,7 +67,7 @@ export function Card({ post = {}, deleteFunction = () => { }, onUpdateTitle = ()
                     }
 
                 </div>
-                {tags.length ? <div className={style.tags_list}>{tags.map((tag, i) => <div key={i} className={`${style.tags} setClass(tag_css, tag)`}>{tag}</div>)}</div> : <div>Nessun tag </div>}
+                {tags.length ? <div className={style.tags_list}>{tags.map((tag, i) => <div key={i} className={`${style.tags} `}>{tag}</div>)}</div> : <div>Nessun tag </div>}
                 <p className={style.description}>
                     {content}
                 </p>

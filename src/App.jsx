@@ -22,8 +22,7 @@ function App() {
     axios.get(`${BASE_URI}/posts`)
       .then(res => {
         setPosts(res.data)
-        setCategory()
-
+        fetchCategories()
       })
       .catch(err => console.log(err))
   }
@@ -64,8 +63,6 @@ function App() {
             <Route path='posts'>
               <Route path='' element={<Posts />}> </Route>
               <Route path=':id' element={<Show />}> </Route>
-
-
             </Route>
           </Route>
         </Routes>
