@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { BASE_URI } from '../../config';
 import { Card } from '../../components/Card/Card';
 import GlobalContext from '../../context/GlobalContext';
-import PostList from '../../components/PostList';
+import PostList from '../../components/PostsList/PostList';
+import CategoryList from '../../components/CategoriesList/CategoryList';
 
 
 
@@ -14,7 +15,7 @@ export default function Posts() {
 
     //const [posts, setPosts] = useState([])
 
-    const { posts, fetchPosts } = useContext(GlobalContext);
+    // const { posts, fetchPosts } = useContext(GlobalContext);
 
 
     // useEffect(() => fetchPosts(), []);
@@ -47,11 +48,13 @@ export default function Posts() {
 
     return (
         <main>
+            <CategoryList />
             <section>
                 <div className="container">
                     <h1> I MIEI POST</h1>
                 </div>
             </section>
+
             <PostList />
             {/* <div className="container">
                 <div className="row">

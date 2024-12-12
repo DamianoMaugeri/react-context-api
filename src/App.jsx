@@ -16,7 +16,7 @@ import { BASE_URI } from './config';
 function App() {
 
   const [posts, setPosts] = useState([])
-  const [category, setCategory] = useState([])
+  const [categories, setCategories] = useState([])
 
   function fetchPosts() {
     axios.get(`${BASE_URI}/posts`)
@@ -41,12 +41,21 @@ function App() {
       })
   }
 
+  //================ funzione per prendere le categorie
+
+  function fetchCategories() {
+    axios.get(`${BASE_URI}/description`)
+      .then(res => setCategories(res.data))
+      .catch(err => console.log(err))
+  }
+
+
 
 
 
   return (
 
-    <GlobalContext.Provider value={{ posts, fetchPosts, deletePost }} >
+    <GlobalContext.Provider value={{ posts, fetchPosts, deletePost, fetchCategories, categories, setPosts }} >
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainLayout />} >

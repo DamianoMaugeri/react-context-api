@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, } from "react"
-import GlobalContext from "../context/GlobalContext"
-import { Card } from "./Card/Card";
+import GlobalContext from "../../context/GlobalContext"
+import { Card } from "../Card/Card";
 
 
 export default function PostList() {

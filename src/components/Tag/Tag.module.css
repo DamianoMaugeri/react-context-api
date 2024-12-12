@@ -1,0 +1,16 @@
+.tag {
+    background-color: rgb(243, 171, 78);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.tag:hover {
+    background-color: rgb(238, 133, 63);
+}
+
+.active {
+    background-color: rgb(187, 64, 16);
+}
